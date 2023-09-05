@@ -10,6 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.2.0
       - name: Run docker compose
-        run: docker compose --env-file .env.development up -d
+        run: sudo docker compose --env-file .env.development up -d
 
       
