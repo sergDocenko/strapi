@@ -1,5 +1,5 @@
 {
-  "name": "strapi-test",
+  "name": "fuel-strapi",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,16 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.12.4",
-    "@strapi/plugin-users-permissions": "4.12.4",
-    "@strapi/plugin-i18n": "4.12.4",
-    "better-sqlite3": "8.5.0"
+    "@strapi/strapi": "4.12.7",
+    "@strapi/plugin-users-permissions": "4.12.7",
+    "@strapi/plugin-i18n": "4.12.7",
+    "pg": "8.8.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "b8601919-7c81-4b77-853d-c3b7f0d9afd9"
+    "uuid": "8a8b2767-fb69-4ca1-9a49-23675c9f8a86"
   },
   "engines": {
     "node": ">=16.0.0 <=20.x.x",
