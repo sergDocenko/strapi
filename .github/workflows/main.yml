@@ -1,0 +1,15 @@
+name: Publish main
+on:
+  push:
+    branches: [ main ] 
+jobs: 
+ build:   
+    runs-on: self-hosted
+  
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v3.2.0
+      - name: Run docker compose
+        run: sudo docker compose --env-file .env.development up 
+
+      
