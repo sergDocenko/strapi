@@ -16,6 +16,6 @@ jobs:
       - name: Remove strapi image
         run: docker image rm strapi-strapi:latest
       - name: Run docker compose
-        run: docker compose --env-file .env.development up -d
+        run: docker compose --env-file .env.production up -d
 
       
