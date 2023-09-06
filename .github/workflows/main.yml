@@ -9,6 +9,12 @@ jobs:
     steps:      
       - name: Checkout
         uses: actions/checkout@v3.2.0
+      - name: Stop strapi container
+        run: docker container stop strapi
+      - name: Remove strapi container
+        run: docker container rm strapi
+      - name: Remove strapi image
+        run: docker image rm strapi-strapi:latest
       - name: Run docker compose
         run: docker compose --env-file .env.development up -d
 
