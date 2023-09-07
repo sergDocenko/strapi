@@ -6,8 +6,7 @@ env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
 jobs: 
  build:   
-    runs-on: self-hosted
-    # runs-on: ubuntu-latest  
+    runs-on: self-hosted      
     steps:
       
       - name: Checkout

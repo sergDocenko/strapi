@@ -4,12 +4,12 @@ services:
     container_name: strapi
    
     build:     
-      dockerfile: Dockerfile.development
+      dockerfile: ${DOCKERFILE_DEV}
    
     # env_file: ${ENV_FILE}  
     restart: unless-stopped   
-    environment:
-        # DOCKERFILE: ${DOCKERFILE} 
+    environment: 
+        # DOCKERFILE: Dockerfile.development
         # ENV_FILE: ${ENV_FILE} 
     #   DATABASE_CLIENT: ${DATABASE_CLIENT}
         DATABASE_HOST: strapiDB
