@@ -2,8 +2,8 @@ name: Publish development
 on:
   push:
     branches: [ development ] 
-env:
-  DATABASE_USERNAME: admin
+# env:
+#   DATABASE_USERNAME: admin
 jobs: 
  build:   
     runs-on: self-hosted
