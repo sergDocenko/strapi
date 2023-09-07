@@ -4,7 +4,7 @@ on:
     branches: [ development ] 
 env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
-  DOCKERFILE_DEV: ${{secrets.DOCKERFILE_DEV}}
+  DOCKERFILE: ${{secrets.DOCKERFILE_DEV}}
 jobs: 
  build:   
     runs-on: self-hosted      

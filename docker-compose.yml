@@ -4,7 +4,7 @@ services:
     container_name: strapi
    
     build:     
-      dockerfile: ${DOCKERFILE_DEV}
+      dockerfile: ${DOCKERFILE}
    
     # env_file: ${ENV_FILE}  
     restart: unless-stopped   
