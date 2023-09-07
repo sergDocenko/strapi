@@ -6,11 +6,13 @@ jobs:
  build:   
     runs-on: self-hosted
   
-    steps:      
-      - name: Checkout
-        uses: actions/checkout@v4.0.0
+    steps:
+      - name: Print
+        run : echo "{{ toJSON(gihub)}}"      
+      # - name: Checkout
+      #   uses: actions/checkout@v4.0.0
     
-      - name: Run docker compose
-        run: docker compose --env-file .env.development up -d --build strapi
+      # - name: Run docker compose
+      #   run: docker compose --env-file .env.development up -d --build strapi
 
       
