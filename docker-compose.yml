@@ -23,7 +23,7 @@ services:
         APP_KEYS: "toBeModified1,toBeModified2"
         API_TOKEN_SALT: tobemodified
         TRANSFER_TOKEN_SALT: tobemodified
-    #   NODE_ENV: ${NODE_ENV}
+        NODE_ENV: ${NODE_ENV}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -41,11 +41,11 @@ services:
     container_name: strapiDB
     restart: unless-stopped
     
-    # env_file: ${ENV_FILE}  
+     
     image: postgres:14.1-alpine
     environment:
       # ENV_FILE: ${ENV_FILE} 
-      POSTGRES_USER: admin
+      POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: strapi
     volumes:
