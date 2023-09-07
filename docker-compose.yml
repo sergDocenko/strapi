@@ -2,22 +2,28 @@ version: "3.9"
 services:
   strapi:
     container_name: strapi
-    build:
-      dockerfile: ${DOCKERFILE}     
-    restart: unless-stopped
-
-    env_file: ${ENV_FILE}
+   
+    build:     
+      dockerfile: Dockerfile.development
+   
+    # env_file: ${ENV_FILE}  
+    restart: unless-stopped   
     environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: strapiDB
-      DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
+        # DOCKERFILE: ${DOCKERFILE} 
+        # ENV_FILE: ${ENV_FILE} 
+    #   DATABASE_CLIENT: ${DATABASE_CLIENT}
+        DATABASE_HOST: strapiDB
+    #   DATABASE_PORT: ${DATABASE_PORT}
+        DATABASE_NAME: strapi
+        DATABASE_USERNAME: admin
+        DATABASE_PASSWORD: 123456
+    #   JWT_SECRET: ${JWT_SECRET}
+    #   ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+        ADMIN_JWT_SECRET: tobemodified
+        APP_KEYS: "toBeModified1,toBeModified2"
+        API_TOKEN_SALT: tobemodified
+        TRANSFER_TOKEN_SALT: tobemodified
+    #   NODE_ENV: ${NODE_ENV}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -34,12 +40,14 @@ services:
   strapiDB:
     container_name: strapiDB
     restart: unless-stopped
-    env_file: ${ENV_FILE}
+    
+    # env_file: ${ENV_FILE}  
     image: postgres:14.1-alpine
     environment:
-      POSTGRES_USER: ${DATABASE_USERNAME}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_DB: ${DATABASE_NAME}
+      # ENV_FILE: ${ENV_FILE} 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: strapi
     volumes:
       - strapi-data:/var/lib/postgresql/data #using a volume
       # - ./data:/var/lib/postgresql/data # if you want to use a bind folder
