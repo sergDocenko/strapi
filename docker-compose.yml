@@ -23,7 +23,7 @@ services:
         APP_KEYS: "toBeModified1,toBeModified2"
         API_TOKEN_SALT: tobemodified
         TRANSFER_TOKEN_SALT: tobemodified
-        NODE_ENV: ${NODE_ENV}
+        # NODE_ENV: ${NODE_ENV}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
