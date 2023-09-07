@@ -3,7 +3,7 @@ on:
   push:
     branches: [ development ] 
 env:
-  DATABASE_USERNAME: admin
+  DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
 jobs: 
  build:   
     runs-on: self-hosted
