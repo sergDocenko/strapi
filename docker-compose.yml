@@ -6,7 +6,7 @@ services:
     build:     
       dockerfile: ${DOCKERFILE}
    
-    env_file: ${ENV_FILE}  
+    # env_file: ${ENV_FILE}  
     restart: unless-stopped   
     environment: 
         # DOCKERFILE: Dockerfile.development
