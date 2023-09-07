@@ -4,8 +4,8 @@ on:
     branches: [ development ] 
 jobs: 
  build:   
-    runs-on: self-hosted
-  
+    # runs-on: self-hosted
+    runs-on: ubuntu-latest  
     steps:
       - name: Print
         run : echo "{{ toJSON(gihub)}}"      
