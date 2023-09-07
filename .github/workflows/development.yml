@@ -5,6 +5,7 @@ on:
 env:
   DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
   DOCKERFILE: ${{secrets.DOCKERFILE_DEV}}
+  ENV_FILE: env.development
 jobs: 
  build:   
     runs-on: self-hosted      
